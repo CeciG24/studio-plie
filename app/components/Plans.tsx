@@ -1,8 +1,8 @@
 export default function Plans({ data }) {
-  const phone = "5212227095170"; // 👈 cambia por el número real
+  const phone = "5212227095170"; 
 
   return (
-    <section className="py-20 bg-[#F5F3EF] text-center">
+    <section id="costos" className="py-20 bg-[#FFFCF5] text-center">
       <h2 className="text-4xl font-serif mb-2">Elige tu plan</h2>
       <p className="text-gray-500 mb-12">Sin contratos, sin compromisos</p>
 
@@ -32,13 +32,19 @@ export default function Plans({ data }) {
                 <p className="text-3xl font-bold mb-4">${plan.precio}</p>
 
                 {plan.descripcion && (
-                  <p
-                    className={`text-sm mb-2 ${
-                      plan.destacado ? "text-white/80" : "text-gray-500"
-                    }`}
-                  >
-                    {plan.descripcion}
-                  </p>
+                  <ul className="text-sm mb-4 space-y-2 text-left">
+                    {plan.descripcion.map((item, i) => (
+                      <li
+                        key={i}
+                        className={`flex items-start gap-2 ${
+                          plan.destacado ? "text-white/80" : "text-gray-600"
+                        }`}
+                      >
+                        <span className="mt-1 text-xs">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 )}
 
                 {plan.detalle && (

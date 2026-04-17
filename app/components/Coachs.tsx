@@ -22,7 +22,7 @@ export default async function Coachs() {
   const instructoras = await getInstructoras();
 
   return (
-    <section className="bg-[#FFFCF5] py-24 px-8">
+    <section id="instructores" className="bg-[#FFFCF5] py-24 px-8">
       <div className="max-w-4xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-bold text-[#2F4156] mb-4">
           Nuestras instructoras

@@ -6,6 +6,7 @@ interface BeneficioCard {
   descripcion: string;
 }
 
+
 const beneficios: BeneficioCard[] = [
   {
     icon: (
@@ -81,15 +82,6 @@ export default function Beneficios() {
         ))}
       </div>
 
-      {/* CTA */}
-      <div className="flex justify-center">
-        <a
-          href="#horarios"
-          className="bg-[#2F4156] text-white text-sm font-medium px-8 py-3 rounded-full hover:bg-[#243347] transition-colors"
-        >
-          Agendar Clase
-        </a>
-      </div>
     </section>
   );
 }

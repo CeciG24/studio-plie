@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsappButton";
+import Navbar from "./components/Navbar";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -30,15 +33,27 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="es-MX"
       className={`${playfair.variable} ${inter.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col antialiased">{children}</body>
+      <body className="min-h-full flex flex-col antialiased">
+        {/* NAVEGACIÓN */}
+        <Navbar />
+
+        {/* CONTENIDO PRINCIPAL */}
+        <main className="flex-1">{children}</main>
+
+        {/* FOOTER */}
+        <Footer />
+
+        {/* BOTÓN FLOTANTE */}
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }

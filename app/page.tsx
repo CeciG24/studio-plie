@@ -11,6 +11,8 @@ import { plansQuery } from "@/sanity/lib/queries";
 import Plans from "./components/Plans";
 import { galleryQuery } from "@/sanity/lib/queries";
 import Gallery from "./components/Gallery";
+import Contact from "./components/Contact";
+
 export default async function Home() {
   const scheduleData = await client.fetch(scheduleQuery);
   const plansData = await client.fetch(plansQuery);
@@ -25,6 +27,7 @@ export default async function Home() {
       <Schedule data={scheduleData} />
       <Plans data={plansData} />
       <Gallery data={galleryData?.imagenes} />
+      <Contact />
     </main>
   );
 }

@@ -2,21 +2,36 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50); // 👈 punto de cambio
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const links = [
     { label: "Quiénes somos", href: "#historia" },
     { label: "Instructores", href: "#instructores" },
     { label: "Horarios", href: "#horarios" },
     { label: "Ubicación", href: "#contacto" },
-    { label: "FAQ", href: "#faq" },
   ];
 
   return (
-    <nav className="absolute top-0 left-0 w-full z-50 px-8 py-3 flex items-center justify-between">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 px-8 py-3 flex items-center justify-between transition-all duration-300 ${
+        scrolled
+          ? "bg-[#FFFCF5]/90 backdrop-blur-md shadow-sm"
+          : "bg-transparent backdrop-blur-none"
+      }`}
+    >
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2">
         <Image
@@ -42,10 +57,10 @@ export default function Navbar() {
         ))}
         <li>
           <a
-            href="#horarios"
+            href="#costos"
             className="border border-[#2F4156] text-[#2F4156] text-sm font-medium px-5 py-2 rounded-full hover:bg-[#2F4156] hover:text-white transition-colors"
           >
-            Ver Horarios
+            Ver Costos
           </a>
         </li>
       </ul>

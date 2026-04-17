@@ -20,16 +20,11 @@ export const plan = defineType({
     }),
 
     defineField({
-      name: "descripcion",
-      title: "Descripción",
-      type: "string",
-    }),
-
-    defineField({
-      name: "detalle",
-      title: "Detalle (ej: $200/clase)",
-      type: "string",
-    }),
+  name: "descripcion",
+  title: "Beneficios",
+  type: "array",
+  of: [{ type: "string" }],
+}),
 
     defineField({
       name: "destacado",
@@ -43,12 +38,6 @@ export const plan = defineType({
       name: "orden",
       title: "Orden",
       type: "number",
-    }),
-
-    defineField({
-    name: "whatsappText",
-    title: "Mensaje WhatsApp",
-    type: "string",
     }),
 
     ],

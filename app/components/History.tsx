@@ -12,21 +12,23 @@ export default function History() {
         <div className="flex flex-col md:flex-row items-start gap-12">
           <div className="w-full md:w-1/2">
             <Image
-              src="/pilates-reformer.jpg"
+              src="/studio.jpeg"
               alt="Nuestra Historia"
               width={600}
-              height={400}
-              className="object-cover rounded-lg w-full h-auto"
+              height={200}
+              className="object-cover rounded-lg w-full h-[300px] md:h-[400px] shadow-md"
             />
           </div>
           <div className="w-full md:w-1/2">
             <p className="text-lg text-[#6B7280]">
+              <br />
+              <br />
               El estudio nace con la idea de hacer del pilates una experiencia
               accesible para más personas. Buscamos romper la idea de que es
               exclusivo, ofreciendo clases de calidad en un ambiente cercano,
               profesional y a precios justos.
-                <br />
-                <br />
+              <br />
+              <br />
               Más que un estudio, somos un espacio donde puedes desconectarte
               del estrés, reconectar con tu cuerpo y sentirte acompañada en tu
               proceso, en una comunidad inclusiva que prioriza tu bienestar
