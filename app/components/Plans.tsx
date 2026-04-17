@@ -1,4 +1,6 @@
-export default function Plans({ data }) {
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from "react";
+
+export default function Plans({ data }: { data: any }) {
   const phone = "5212227095170"; 
 
   return (
@@ -7,7 +9,7 @@ export default function Plans({ data }) {
       <p className="text-gray-500 mb-12">Sin contratos, sin compromisos</p>
 
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {data.map((plan) => {
+        {data.map((plan: { whatsappText: any; nombre: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | Iterable<ReactNode> | null | undefined; precio: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | Iterable<ReactNode> | null | undefined; _id: Key | null | undefined; destacado: any; descripcion: any[]; detalle: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | Iterable<ReactNode> | null | undefined; }) => {
           const message = plan.whatsappText
             ? plan.whatsappText
             : `Hola, me interesa el plan ${plan.nombre} de $${plan.precio}`;

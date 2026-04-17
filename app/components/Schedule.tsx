@@ -16,9 +16,13 @@ function formatTime(time: string) {
   return `${start}:00 - ${end}:00`;
 }
 
-export default function Schedule({ data }) {
+type Coach = { nombre?: string };
+type Slot = { time: string; type?: string; coach?: Coach };
+type Day = { day: string; slots?: Slot[] };
+
+export default function Schedule({ data }: { data: Day[] }) {
   const [activeDay, setActiveDay] = useState("lunes");
-  const [selectedSlot, setSelectedSlot] = useState(null);
+  const [selectedSlot, setSelectedSlot] = useState<Slot | null>(null);
   const phone = "5212227095170";
 
   const current = data.find((d) => d.day === activeDay);

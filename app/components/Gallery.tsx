@@ -5,7 +5,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { urlFor } from "@/sanity/lib/client";
 
-export default function Gallery({ data }) {
+export default function Gallery({ data }: { data: any[] }) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   if (!data || data.length === 0) return null;
@@ -52,20 +52,20 @@ export default function Gallery({ data }) {
         {/* Secundarias */}
         {rest.length > 0 && (
           <div className="grid gap-6 grid-cols-2">
-            {rest.map((img, i) => (
-              <div
-                key={i}
-                onClick={() => open(i + 1)}
-                className="relative h-[240px] cursor-pointer rounded-xl overflow-hidden"
-              >
-                <Image
-                  src={urlFor(img).width(500).height(400).url()}
-                  alt=""
-                  fill
-                  className="object-cover hover:scale-105 transition duration-500"
-                />
-              </div>
-            ))}
+            {rest.map((img: any, i: number) => (
+                  <div
+                    key={i}
+                    onClick={() => open(i + 1)}
+                    className="relative h-[240px] cursor-pointer rounded-xl overflow-hidden"
+                  >
+                    <Image
+                      src={urlFor(img).width(500).height(400).url()}
+                      alt=""
+                      fill
+                      className="object-cover hover:scale-105 transition duration-500"
+                    />
+                  </div>
+                ))}
           </div>
         )}
       </div>
