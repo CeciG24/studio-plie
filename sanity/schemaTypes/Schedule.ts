@@ -44,6 +44,7 @@ export const schedule = defineType({
       type: "array",
       of: [
         defineField({
+          name: "bloqueHorario",
           type: "object",
           fields: [
             defineField({
