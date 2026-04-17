@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { urlFor } from "@/sanity/lib/client";
-import { motion, AnimatePresence } from "framer-motion";
 
 export default function Gallery({ data }) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
