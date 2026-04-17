@@ -1,0 +1,644 @@
+[
+  {
+    "of": [
+      {
+        "lists": [
+          {
+            "value": "bullet",
+            "title": "Bullet"
+          }
+        ],
+        "marks": {
+          "annotations": [
+            {
+              "fields": [
+                {
+                  "validation": [
+                    {
+                      "level": "error",
+                      "rules": [
+                        {
+                          "flag": "uri",
+                          "constraint": {
+                            "options": {
+                              "scheme": [
+                                "/^http$/",
+                                "/^https$/"
+                              ],
+                              "allowRelative": false,
+                              "relativeOnly": false,
+                              "allowCredentials": false
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "name": "href",
+                  "type": "url",
+                  "title": "URL"
+                }
+              ],
+              "name": "link",
+              "type": "object",
+              "title": "URL"
+            }
+          ],
+          "decorators": [
+            {
+              "value": "strong",
+              "title": "Strong"
+            },
+            {
+              "value": "em",
+              "title": "Emphasis"
+            }
+          ]
+        },
+        "of": [],
+        "styles": [
+          {
+            "value": "normal",
+            "title": "Normal"
+          },
+          {
+            "value": "h1",
+            "title": "H1"
+          },
+          {
+            "value": "h2",
+            "title": "H2"
+          },
+          {
+            "value": "h3",
+            "title": "H3"
+          },
+          {
+            "value": "h4",
+            "title": "H4"
+          },
+          {
+            "value": "blockquote",
+            "title": "Quote"
+          }
+        ],
+        "type": "block"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternative Text"
+          }
+        ],
+        "type": "image"
+      }
+    ],
+    "name": "blockContent",
+    "type": "array"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ]
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      }
+    ],
+    "name": "category",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ]
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "to": [
+          {
+            "type": "author"
+          }
+        ],
+        "name": "author",
+        "type": "reference"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alternative text"
+          }
+        ],
+        "name": "mainImage",
+        "type": "image"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "category"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to category"
+          }
+        ],
+        "name": "categories",
+        "type": "array"
+      },
+      {
+        "name": "publishedAt",
+        "type": "datetime"
+      },
+      {
+        "name": "body",
+        "type": "blockContent"
+      }
+    ],
+    "name": "post",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "name"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ]
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "level": "error",
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "of": [],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "type": "block"
+          }
+        ],
+        "name": "bio",
+        "type": "array"
+      }
+    ],
+    "name": "author",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "nombre",
+        "type": "string",
+        "title": "Nombre completo"
+      },
+      {
+        "description": "Ej: Pilates Reformer, Pilates Mat, etc.",
+        "name": "especialidad",
+        "type": "string"
+      },
+      {
+        "rows": 4,
+        "name": "bio",
+        "type": "text",
+        "title": "Biografía"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "foto",
+        "type": "image"
+      },
+      {
+        "description": "Número para controlar el orden en la página",
+        "name": "orden",
+        "type": "number",
+        "title": "Orden de aparición"
+      }
+    ],
+    "name": "instructora",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Lunes",
+              "value": "lunes"
+            },
+            {
+              "title": "Martes",
+              "value": "martes"
+            },
+            {
+              "title": "Miércoles",
+              "value": "miercoles"
+            },
+            {
+              "title": "Jueves",
+              "value": "jueves"
+            },
+            {
+              "title": "Viernes",
+              "value": "viernes"
+            },
+            {
+              "title": "Sábado",
+              "value": "sabado"
+            }
+          ]
+        },
+        "name": "day",
+        "type": "string",
+        "title": "Día"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "07:00 - 08:00",
+                      "value": "07-08"
+                    },
+                    {
+                      "title": "08:00 - 09:00",
+                      "value": "08-09"
+                    },
+                    {
+                      "title": "09:00 - 10:00",
+                      "value": "09-10"
+                    },
+                    {
+                      "title": "10:00 - 11:00",
+                      "value": "10-11"
+                    },
+                    {
+                      "title": "11:00 - 12:00",
+                      "value": "11-12"
+                    },
+                    {
+                      "title": "12:00 - 13:00",
+                      "value": "12-13"
+                    },
+                    {
+                      "title": "13:00 - 14:00",
+                      "value": "13-14"
+                    },
+                    {
+                      "title": "14:00 - 15:00",
+                      "value": "14-15"
+                    },
+                    {
+                      "title": "15:00 - 16:00",
+                      "value": "15-16"
+                    },
+                    {
+                      "title": "16:00 - 17:00",
+                      "value": "16-17"
+                    },
+                    {
+                      "title": "17:00 - 18:00",
+                      "value": "17-18"
+                    },
+                    {
+                      "title": "18:00 - 19:00",
+                      "value": "18-19"
+                    },
+                    {
+                      "title": "19:00 - 20:00",
+                      "value": "19-20"
+                    },
+                    {
+                      "title": "20:00 - 21:00",
+                      "value": "20-21"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "level": "error",
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "07-08",
+                          "08-09",
+                          "09-10",
+                          "10-11",
+                          "11-12",
+                          "12-13",
+                          "13-14",
+                          "14-15",
+                          "15-16",
+                          "16-17",
+                          "17-18",
+                          "18-19",
+                          "19-20",
+                          "20-21"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ]
+                  }
+                ],
+                "name": "time",
+                "type": "string",
+                "title": "Horario"
+              },
+              {
+                "to": [
+                  {
+                    "type": "instructora"
+                  }
+                ],
+                "name": "coach",
+                "type": "reference"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Clase",
+                      "value": "class"
+                    },
+                    {
+                      "title": "Descanso",
+                      "value": "break"
+                    }
+                  ]
+                },
+                "initialValue": "class",
+                "name": "type",
+                "type": "string",
+                "title": "Tipo"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "slots",
+        "type": "array",
+        "title": "Clases del día"
+      }
+    ],
+    "name": "schedule",
+    "type": "document",
+    "title": "Horarios"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "nombre",
+        "type": "string",
+        "title": "Nombre del plan"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "precio",
+        "type": "number"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "descripcion",
+        "type": "array",
+        "title": "Beneficios"
+      },
+      {
+        "initialValue": false,
+        "description": "Para resaltar el plan (ej: Membresía)",
+        "name": "destacado",
+        "type": "boolean",
+        "title": "¿Destacado?"
+      },
+      {
+        "name": "orden",
+        "type": "number"
+      }
+    ],
+    "name": "plan",
+    "type": "document",
+    "title": "Planes"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              },
+              {
+                "flag": "max",
+                "constraint": 5
+              }
+            ],
+            "message": "Puedes subir entre 1 y 5 imágenes"
+          }
+        ],
+        "of": [
+          {
+            "options": {
+              "hotspot": true
+            },
+            "type": "image"
+          }
+        ],
+        "name": "imagenes",
+        "type": "array",
+        "title": "Imágenes"
+      }
+    ],
+    "name": "gallery",
+    "type": "document",
+    "title": "Galería"
+  }
+]
