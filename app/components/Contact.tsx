@@ -69,7 +69,7 @@ export default function Contact() {
         {/* MAPA */}
         <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-md">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d15090.35905597623!2d-98.21036274999999!3d18.9937166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1ses-419!2smx!4v1776443639956!5m2!1ses-419!2smx"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.2390349731604!2d-98.20959092479634!3d19.00918578218172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc0a6fa49eef3%3A0xf69a76b28c4e9a63!2sPlaza%20Universidad%20Puebla!5e0!3m2!1ses-419!2smx!4v1776492894704!5m2!1ses-419!2smx"
             width="600"
             height="450"
             allowFullScreen
