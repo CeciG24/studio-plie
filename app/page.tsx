@@ -3,6 +3,7 @@ import Benefits from "./components/Benefits";
 import History from "./components/History";
 import Coachs from "./components/Coachs";
 import Schedule from "./components/Schedule";
+import Inauguracion from "./components/Inauguracion";
 
 import { client } from "@/sanity/lib/client";
 import { scheduleQuery } from "@/sanity/lib/queries";
@@ -20,6 +21,7 @@ export default async function Home() {
   return (
     <main>
       <Hero />
+      <Inauguracion />
       <Benefits />
       <History />
       <Coachs />
